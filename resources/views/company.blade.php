@@ -21,7 +21,7 @@
         <div class="table-responsive">
             <table id="company-table" class="table">
                 <thead>
-                    <td>{{ __('Logo') }}</td>
+                    <td width="10%">{{ __('Logo') }}</td>
                     <td>{{ __('Name') }}</td>
                     <td>{{ __('Email') }}</td>
                     <td>{{ __('Action') }}</td>
