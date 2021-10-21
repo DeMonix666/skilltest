@@ -11,7 +11,7 @@ $(function () {
                 data: 'logo', 
                 name: 'logo',
                 render:function (data, type, full, meta) {
-                    return (data) ? '<img src="uploads/company/' + data + '" class="img-thumbnail" />' : null;
+                    return (data) ? '<img src="' + data.replace('public/', 'storage/') + '" class="img-thumbnail" />' : null;
                 }
             },
             {

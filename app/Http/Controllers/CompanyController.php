@@ -60,9 +60,11 @@ class CompanyController extends Controller
             if ($logo){
                 $filename = time().'_'. preg_replace("/\s+/", "_", $logo->getClientOriginalName()) ;
 
-                $logo->move('uploads/company', $filename);
+                // $logo->move('uploads/company', $filename);
 
-                $company->logo = $filename;
+                $path = $request->file('logo')->store('public/company');
+                
+                $company->logo = $path;
             }
 
             $company->save();
@@ -125,12 +127,12 @@ class CompanyController extends Controller
             $logo = $request->file('logo');
 
             if ($logo){
-                $filename = time().'_'. preg_replace("/\s+/", "_", $logo->getClientOriginalName()) ;
-                // $path = $request->file('logo')->store('public/company');
+                //$filename = time().'_'. preg_replace("/\s+/", "_", $logo->getClientOriginalName()) ;
+                // $logo->move('uploads/company', $filename);
 
-                $logo->move('uploads/company', $filename);
+                $path = $request->file('logo')->store('public/company');
 
-                $company->logo = $filename;
+                $company->logo = $path;
             }
 
             $company->update();
